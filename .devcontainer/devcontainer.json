@@ -1,0 +1,22 @@
+{
+  "name": "DEBRIS Development",
+  "image": "mcr.microsoft.com/vscode/devcontainers/c:2",  // Latest Ubuntu + full C/C++ toolchain
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/python:1": {}  // For validation scripts
+  },
+  "postCreateCommand": "sudo apt update && sudo apt install -y valgrind clang-tidy-15 bear",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "llvm-vs-code-extensions.vscode-clangd",
+        "vadimcn.vscode-lldb",
+        "jeff-hykin.better-cpp-syntax",
+        "twxs.cmake"
+      ]
+    }
+  },
+  "remoteUser": "vscode"
+}
